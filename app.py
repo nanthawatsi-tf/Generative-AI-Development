@@ -14,13 +14,14 @@ class AppleRecipeSchema(BaseModel):
     ios_steps: list[str]
     watchos_time: int
 
-siri_prompt = "ขอเมนูอาหารทำในหอพักง่ายๆ วัตถุดิบมี อกไก่ บะหมี่กึ่งสำเร็จรูป และกะหล่ำปลี"
+siri_prompt = "ขอเมนูอาหารทำในหอพักง่ายๆ อ้างอิงจากราคาวัตถุดิบปัจจุบัน"
 
 response = macbook_client.models.generate_content(
     model="gemini-2.5-flash",
     contents=siri_prompt,
     config=types.GenerateContentConfig(
         system_instruction="คุณคือผู้ช่วยอัจฉริยะ Apple Intelligence เชี่ยวชาญการแนะนำอาหารสไตล์มินิมอล",
+        tools=[{"google_search": {}}],
         response_mime_type="application/json",
         response_schema=AppleRecipeSchema,
         temperature=0.7,
@@ -28,4 +29,3 @@ response = macbook_client.models.generate_content(
 )
 
 print(response.text)
-
