@@ -1,14 +1,14 @@
-# Specification: CE Study Assistant App
+# Specification: Apple Intelligence Recipe Assistant
 
 ## Overview
-A Python application utilizing the Gemini API to analyze programming concepts and provide structured study plans for Computer Engineering students.
+A Python utility powered by Apple's ecosystem naming conventions to generate custom student meal configurations via structured JSON output.
 
 ## Features
-- System Instructions for specialized AI role.
-- Structured Output (JSON) for clear data processing.
-- Temperature configuration for deterministic output.
+- Siri-like persona system instructions
+- Structured schema validation using Pydantic
+- Temperature tuning set to 0.7 for creative generation
 
-## Inputs & Outputs
-- Input: Topic name (e.g., "Data Structures").
-- Output: JSON containing summary, key concepts, and estimated study time.
-- 
+## Input & Output
+- Input: Inventory items
+- Output: JSON formatted meal parameters
+
